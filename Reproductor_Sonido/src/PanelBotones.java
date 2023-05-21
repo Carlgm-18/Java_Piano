@@ -30,17 +30,20 @@ public class PanelBotones extends JPanel {
 
     private ActionListener crearListener(){
         return e -> {
-            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasCrear(new PanelNotasCrear()));
+            PanelNotasCrear notasCrear = new PanelNotasCrear();
+            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasCrear(notasCrear));
             PanelContenidos.innerSplit.setDividerLocation(100);
-            PanelContenidos.generalSplit.setLeftComponent(new PanelNotasCrear());
+            PanelContenidos.generalSplit.setLeftComponent(notasCrear);
             PanelContenidos.generalSplit.setDividerLocation(550);
         };
     }
 
     private ActionListener reproducirListener(){
         return e -> {
-            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasReproducir());
-            PanelContenidos.generalSplit.setLeftComponent(new PanelNotasReproducir());
+            PanelNotasReproducir panelReproducir = new PanelNotasReproducir();
+
+            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasReproducir(panelReproducir));
+            PanelContenidos.generalSplit.setLeftComponent(panelReproducir);
         };
     }
 
