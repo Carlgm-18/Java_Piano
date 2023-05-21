@@ -15,7 +15,7 @@ public class PanelDibujo extends JPanel {
             throw new RuntimeException(ioEx);
         }
 
-        JLabel uib = new JLabel(new ImageIcon(uibImage.getScaledInstance(800,600, Image.SCALE_DEFAULT)));
+        JLabel uib = new JLabel(new ImageIcon(uibImage.getScaledInstance(800,550, Image.SCALE_DEFAULT)));
         add(uib);
         setVisible(true);
     }

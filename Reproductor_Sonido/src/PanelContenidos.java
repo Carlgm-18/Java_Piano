@@ -13,7 +13,7 @@ public class PanelContenidos extends JPanel {
     private void init(){
         innerSplit = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new PanelActividades(), new PanelBotones());
         innerSplit.setEnabled(false);
-        innerSplit.setDividerLocation(60);
+        innerSplit.setDividerLocation(90);
         generalSplit = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new PanelDibujo(), innerSplit);
         generalSplit.setEnabled(false);
         add(generalSplit);

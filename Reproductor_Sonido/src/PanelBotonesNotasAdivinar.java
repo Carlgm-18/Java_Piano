@@ -1,2 +1,4 @@
-public class PanelBotonesNotasAdivinar {
+import javax.swing.*;
+
+public class PanelBotonesNotasAdivinar extends JPanel {
 }

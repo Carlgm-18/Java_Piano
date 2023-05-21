@@ -3,8 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class PanelBotones extends JPanel {
-    private String[] names = {"CREAR", "REPRODUCIR", "ADIVINAR", "SALIR"};
+    private final String[] names = {"CREAR", "REPRODUCIR", "ADIVINAR", "SALIR"};
     private JButton[] botones = new JButton[names.length];
+
     public PanelBotones(){
         setLayout(new GridLayout(1, 4));
         colocarBotones();
@@ -12,32 +13,41 @@ public class PanelBotones extends JPanel {
     }
     private void colocarBotones(){
         for(int i = 0; i<names.length; i++){
-            botones[i] = new JButton(names[i]);
-            botones[i].setFocusPainted(false);
-            botones[i].setBackground(Color.BLACK);
-            botones[i].setForeground(Color.WHITE);
-            botones[i].setFont(new Font("Calibri", 1, 18));
+            JButton but = new JButton(names[i]);
+            but.setFocusPainted(false);
+            but.setBackground(Color.BLACK);
+            but.setForeground(Color.WHITE);
+            but.setFont(new Font("Calibri", 1, 18));
+            botones[i] = but;
+            add(but);
         }
-        for(JButton b : botones){
-            add(b);
-        }
+
+        botones[0].addActionListener(crearListener());
+        botones[1].addActionListener(reproducirListener());
+        botones[2].addActionListener(adivinarListener());
+        botones[3].addActionListener(salirListener());
     }
 
     private ActionListener crearListener(){
         return e -> {
-
+            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasCrear(new PanelNotasCrear()));
+            PanelContenidos.innerSplit.setDividerLocation(100);
+            PanelContenidos.generalSplit.setLeftComponent(new PanelNotasCrear());
+            PanelContenidos.generalSplit.setDividerLocation(550);
         };
     }
 
     private ActionListener reproducirListener(){
         return e -> {
-
+            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasReproducir());
+            PanelContenidos.generalSplit.setLeftComponent(new PanelNotasReproducir());
         };
     }
 
     private ActionListener adivinarListener(){
         return e -> {
-
+            PanelContenidos.innerSplit.setLeftComponent(new PanelBotonesNotasAdivinar());
+            PanelContenidos.generalSplit.setLeftComponent(new PanelNotasAdivinar());
         };
     }
 
