@@ -1,5 +1,12 @@
+package components_package;
+
 import java.awt.*;
 
+
+
+/**
+ * @author Carlos Gálvez Mena
+ */
 public enum Notas {
     DO(Color.RED),
     RE(Color.PINK),

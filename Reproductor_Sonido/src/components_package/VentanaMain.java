@@ -1,4 +1,14 @@
+package components_package;
+
 import javax.swing.*;
+
+
+
+/**
+ * @author Carlos Gálvez Mena
+ *
+ * Permite inicializar la interfaz. Es la ventana principal.
+ */
 
 public class VentanaMain extends JFrame {
     public VentanaMain(){
@@ -8,5 +18,6 @@ public class VentanaMain extends JFrame {
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 }

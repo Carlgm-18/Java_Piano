@@ -1,3 +1,5 @@
+package components_package;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -5,6 +7,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+
+
+/**
+ * @author Carlos Gálvez Mena
+ *
+ * Representa la imagen de la UIB colocada en la pantalla inicial
+ */
 public class PanelDibujo extends JPanel {
     private BufferedImage uibImage;
     public PanelDibujo(){

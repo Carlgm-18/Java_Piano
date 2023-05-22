@@ -1,12 +1,26 @@
+package components_package;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
+/**
+ * @author Carlos Gálvez Mena
+ *
+ * Representa el piano con el que se va a generar la melodía
+ */
 public class PanelBotonesNotasCrear extends JPanel implements ActionListener {
     private Notas[] names = Notas.values();
     private JButton[] botones = new JButton[names.length+1];
     private PanelNotasCrear pianoCrear;
+
+    /**
+     *
+     * @param painoCrear Objeto de tipo {@link PanelNotasCrear}
+     */
     public PanelBotonesNotasCrear(PanelNotasCrear painoCrear){
         this.pianoCrear = painoCrear;
         setLayout(new GridLayout(1, 8));
@@ -14,6 +28,9 @@ public class PanelBotonesNotasCrear extends JPanel implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * Distribuye los botones que componen el piano
+     */
     private void colocarBotones(){
         for(int i = 0; i<names.length; i++){
             JButton button = new JButton(names[i].name());
@@ -37,11 +54,18 @@ public class PanelBotonesNotasCrear extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Trata los eventos generados por las diferentes teclas del piano
+     * @param e Evento a tratar
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         pianoCrear.addNota(Notas.valueOf(e.getActionCommand()));
     }
 
+    /**
+     * Método que permite volver a la pantalla principal
+     */
     private void changeToInicio(){
         PanelContenidos.innerSplit.setLeftComponent(new PanelActividades());
         PanelContenidos.innerSplit.setDividerLocation(90);

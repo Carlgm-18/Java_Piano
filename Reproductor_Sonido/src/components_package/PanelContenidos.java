@@ -1,6 +1,15 @@
+package components_package;
+
 import javax.swing.*;
 import java.awt.*;
 
+
+
+/**
+ * @author Carlos Gálvez Mena
+ *
+ * Representa el contentPane del JFrame
+ */
 public class PanelContenidos extends JPanel {
 
     public static JSplitPane innerSplit;
@@ -10,6 +19,10 @@ public class PanelContenidos extends JPanel {
         init();
         setVisible(true);
     }
+
+    /**
+     * Inicializa todos los componentes necesarios
+     */
     private void init(){
         innerSplit = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new PanelActividades(), new PanelBotones());
         innerSplit.setEnabled(false);
